@@ -777,6 +777,24 @@ class Response(object):
                     pass
         return json.loads(self.text, **kwargs)
 
+    def _save(self, fileobject):
+        for block in self.iter_content(1024):
+            if not block:
+                break
+
+            fileobject.write(block)
+
+    def save(self, file):
+        """Saves the content of a response to a file path or file-like object.
+
+        :param file: File path or file-like object to write to.
+        """
+        if isinstance(file, basestring):
+            with open(file, 'wb') as f:
+                self._save(f)
+        else:
+            self._save(file)
+
     @property
     def links(self):
         """Returns the parsed header links of the response, if any."""
