@@ -47,6 +47,14 @@ This is a fork of Requests with a save() function. This `won't be implemented in
     >>> r = requests.get('http://httpbin.org/html')
     >>> r.save('output.html')
 
+Alternatively:
+
+.. code-block:: pycon
+
+    >>> r = requests.get('http://httpbin.org/html')
+    >>> with open('output.html', 'wb') as f:
+    >>>     r.save(f)
+
 Features
 --------
 
