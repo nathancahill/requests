@@ -11,16 +11,6 @@ Requests: HTTP for Humans
 Requests is an Apache2 Licensed HTTP library, written in Python, for human
 beings.
 
-Differences in this fork
-------------------------
-
-This is a fork of Requests with a save() function. This `won't be implemented in Requests <https://github.com/kennethreitz/requests/pull/823#issuecomment-8170957>`_.
-
-.. code-block:: pycon
-
-    >>> r = requests.get('http://httpbin.org/html')
-    >>> r.save('output.html')
-
 Most existing Python modules for sending HTTP requests are extremely
 verbose and cumbersome. Python's builtin urllib2 module provides most of
 the HTTP capabilities you should need, but the api is thoroughly broken.
@@ -47,6 +37,15 @@ response data in the same way. It's powered by httplib and `urllib3
 <https://github.com/shazow/urllib3>`_, but it does all the hard work and crazy
 hacks for you.
 
+Differences in this fork
+------------------------
+
+This is a fork of Requests with a save() function. This `won't be implemented in Requests <https://github.com/kennethreitz/requests/pull/823#issuecomment-8170957>`_.
+
+.. code-block:: pycon
+
+    >>> r = requests.get('http://httpbin.org/html')
+    >>> r.save('output.html')
 
 Features
 --------
